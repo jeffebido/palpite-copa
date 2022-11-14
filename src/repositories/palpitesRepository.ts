@@ -17,3 +17,13 @@ export async function getByUser(userId: number) {
         where: { userId: userId }
     });
 }
+
+export async function deleteById(id: number) {
+        
+   
+    await prisma.palpites.delete({
+        where: {
+          id: id,
+        },
+    });
+}

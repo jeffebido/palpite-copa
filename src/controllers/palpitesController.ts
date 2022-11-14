@@ -19,3 +19,12 @@ export async function getPalpitesByUser(req: Request, res: Response) {
 
     res.send( paplites );
 }
+
+export async function deletaPalpite(req: Request, res: Response) {
+    
+    const { id } = req.params;
+
+    await palpitesService.deleta(+id);
+
+    res.sendStatus( 202 );
+}

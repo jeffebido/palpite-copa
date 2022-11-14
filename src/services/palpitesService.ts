@@ -1,4 +1,4 @@
-import { insert, getByUser } from '../repositories/palpitesRepository'
+import { insert, getByUser, deleteById } from '../repositories/palpitesRepository'
 
 import { CreatePalpiteData} from '../types/palpitesTypes';
 
@@ -16,4 +16,11 @@ export async function getPalpitesByUser(userId: number){
 
     
     return await getByUser(userId);
+}
+
+export async function deleta(id: number){
+    
+
+    
+    await deleteById(id);
 }
