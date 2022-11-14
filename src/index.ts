@@ -15,7 +15,7 @@ app.use(cors());
 
 app.use(palpitesRouter);
 
-app.use(errorHandlingMiddleware);
+//app.use(errorHandlingMiddleware);
 
 const PORT = process.env.PORT || '5000';
 const HOST = '127.0.0.1';
