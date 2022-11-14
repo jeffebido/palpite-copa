@@ -3,6 +3,7 @@ import cors from 'cors';
 import 'express-async-errors';
 
 import palpitesRouter from './routes/palpitesRouter';
+import jogosRouter from './routes/jogosRouter';
 
 import { errorHandlingMiddleware } from './middlewares/errorHandlerMiddleware';
 
@@ -14,6 +15,7 @@ app.use(cors());
 
 
 app.use(palpitesRouter);
+app.use(jogosRouter);
 
 //app.use(errorHandlingMiddleware);
 

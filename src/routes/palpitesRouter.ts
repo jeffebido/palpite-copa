@@ -1,15 +1,13 @@
 import { Router } from 'express';
 
-import { novoPalpite, getPalpitesByUser, deletaPalpite } from '../controllers/palpitesController';
+import { abreJogo, fechaJogo } from '../controllers/jogosController';
 
-import { palpitesMiddleware } from '../middlewares/palpitesMiddleware';
 
 const router = Router();
 
 
-router.post("/palpite", palpitesMiddleware, novoPalpite);
-router.get("/palpites/:userId", getPalpitesByUser);
-router.delete("/palpite/:id", deletaPalpite);
+router.put("/abreJogo/:id", abreJogo);
+router.put("/fechaJogo/:id", fechaJogo);
 
 export default router;
 
