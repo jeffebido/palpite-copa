@@ -16,19 +16,21 @@ model usuarios {
 
 model jogos {
   id             Int        @id @default(autoincrement())
-  placarCasa     String
-  placarFora     String
-  abertoPalpites String
+  placarCasa     Int        @default(0)
+  placarFora     Int        @default(0)
+  abertoPalpites Boolean    @default(true)
+  timeCasa       String
+  timeFora       String
   palpite        palpites[]
 }
 
 model palpites {
   id          Int      @id @default(autoincrement())
-  palpiteCasa String
-  palpiteFora String
   jogoId      Int
   userId      Int
   createdAt   DateTime @default(now())
+  palpiteCasa Int
+  palpiteFora Int
   jogo        jogos    @relation(fields: [jogoId], references: [id])
   usuario     usuarios @relation(fields: [userId], references: [id])
 }
